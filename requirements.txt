@@ -1,0 +1,10 @@
+sapiopylib~=2024.5.24.210
+sapiopycommons==2024.6.11a252
+waitress~=2.1.2
+natsort~=7.1.1
+beautifulsoup4~=4.11.1
+pikepdf~=8.10.1
+requests~=2.31.0
+tzlocal~=2.1
+hl7apy~=1.3.5
+html2text~=2024.2.26
