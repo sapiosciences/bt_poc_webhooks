@@ -38550,9 +38550,10 @@ class SBA_MasterAssayRunModel(WrappedRecordModel):
     """
     Auto-Generated Record Model Wrapper for data type SBA_MasterAssayRun
     Data Type Display Name: Assay Run (Assay Runs)
-    Fields: CreatedBy, DataRecordName, DateCreated, SBA_AssayInstrumentType, SBA_AssayRunType, SBA_CompletedBy, SBA_DateCompleted, SBA_Description, SBA_Instrument, SBA_InstrumentOutputDataType, SBA_IsPlatingComplete, SBA_MaxQCCV, SBA_OverrideComment, SBA_ParameterName, SBA_RunId, SBA_RunResult, SBA_ValidatedBy, SBA_ValidationDate, SBA_ValidationParameter, SBA_ValidationResult, VeloxLastModifiedBy, VeloxLastModifiedDate
+    Fields: C_SetName, CreatedBy, DataRecordName, DateCreated, SBA_AssayInstrumentType, SBA_AssayRunType, SBA_CompletedBy, SBA_DateCompleted, SBA_Description, SBA_Instrument, SBA_InstrumentOutputDataType, SBA_IsPlatingComplete, SBA_MaxQCCV, SBA_OverrideComment, SBA_ParameterName, SBA_RunId, SBA_RunResult, SBA_ValidatedBy, SBA_ValidationDate, SBA_ValidationParameter, SBA_ValidationResult, VeloxLastModifiedBy, VeloxLastModifiedDate
     """
     DATA_TYPE_NAME: str = 'SBA_MasterAssayRun'
+    C_SETNAME__FIELD_NAME: WrapperField = WrapperField("C_SetName", FieldType.STRING)
     CREATEDBY__FIELD_NAME: WrapperField = WrapperField("CreatedBy", FieldType.STRING)
     DATARECORDNAME__FIELD_NAME: WrapperField = WrapperField("DataRecordName", FieldType.IDENTIFIER)
     DATECREATED__FIELD_NAME: WrapperField = WrapperField("DateCreated", FieldType.DATE)
@@ -38579,6 +38580,18 @@ class SBA_MasterAssayRunModel(WrappedRecordModel):
     @classmethod
     def get_wrapper_data_type_name(cls):
         return cls.DATA_TYPE_NAME
+
+    def set_C_SetName_field(self, value: Optional[str]):
+        """
+        Set data field with field name 'C_SetName' on this record model
+        """
+        self.set_field_value(self.C_SETNAME__FIELD_NAME.field_name, value)
+
+    def get_C_SetName_field(self) -> Optional[str]:
+        """
+        Get data field value with field name 'C_SetName' from this record model
+        """
+        return self.get_field_value(self.C_SETNAME__FIELD_NAME.field_name)
 
     def get_CreatedBy_field(self) -> Optional[str]:
         """
