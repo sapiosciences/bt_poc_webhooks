@@ -10,6 +10,8 @@ from waitress import serve
 
 from sapio.devtools.multitoool import MultiTool
 from sapio.devtools.test_webhooks_health import TestWebhookServerConnection
+from sapio.webhook.nanopore.GetExperimentStatus import GetExperimentStatus
+from sapio.webhook.nanopore.TestNanoPoreConnection import CreateNanoporeExperiment
 from sapio.webhook.waters.generate_waters_input_file import WatersInputFileCreator
 
 # SPDT-1: verify_sapio_cert should be true by default.
@@ -33,6 +35,8 @@ config.register('/test_webhooks_health', TestWebhookServerConnection)
 
 config.register('/generate_waters_input_file', WatersInputFileCreator)
 
+config.register('/create_experiment', CreateNanoporeExperiment)
+config.register('/get_experiment_status', GetExperimentStatus)
 
 # Dev tools
 config.register('/multitool', MultiTool)
@@ -50,7 +54,7 @@ def health_check():
 if __name__ == '__main__':
     host = "0.0.0.0"
     # This port must match the EXPOSE value in the Dockerfile when deploying.
-    port = 8090
+    port = 8080
     if os.environ.get('SapioWebhooksDebug') == "True":
         app.run(host=host, port=port, debug=True)
     else:
